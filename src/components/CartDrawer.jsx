@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../hooks/useCart';
 import { useLocale } from '../hooks/useLocale';
 import { formatAmount } from '../utils/pricing';
+import CheckoutForm from './CheckoutForm';
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, total, cartKey } = useCart();
   const { t, currency, shippingMessage } = useLocale();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   return (
     <AnimatePresence>
@@ -83,6 +86,7 @@ export default function CartDrawer() {
               </div>
               <button
                 disabled={items.length === 0}
+                onClick={() => setCheckoutOpen(true)}
                 className="w-full bg-neutral-900 text-white py-3 rounded-lg hover:bg-neutral-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {t('checkout')}
@@ -90,6 +94,8 @@ export default function CartDrawer() {
               <p className="text-xs text-neutral-500 text-center">{shippingMessage}</p>
             </div>
           </motion.div>
+
+          <CheckoutForm open={checkoutOpen} onClose={() => setCheckoutOpen(false)} />
         </>
       )}
     </AnimatePresence>

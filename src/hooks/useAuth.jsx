@@ -5,6 +5,7 @@ import {
   sendEmailVerification,
   signInWithEmailAndPassword,
   signOut as firebaseSignOut,
+  updateProfile,
 } from 'firebase/auth';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { auth, db, isFirebaseConfigured } from '../firebase/config';
@@ -24,8 +25,9 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  async function signUp(email, password) {
+  async function signUp(email, password, displayName) {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
+    if (displayName) await updateProfile(cred.user, { displayName });
     await sendEmailVerification(cred.user);
     return cred.user;
   }
@@ -49,6 +51,16 @@ export function AuthProvider({ children }) {
     return true;
   }
 
+  async function submitOrder(orderData) {
+    if (!isFirebaseConfigured) return false;
+    await addDoc(collection(db, 'orders'), {
+      ...orderData,
+      userId: auth.currentUser?.uid ?? null,
+      createdAt: serverTimestamp(),
+    });
+    return true;
+  }
+
   const value = useMemo(
     () => ({
       user,
@@ -60,6 +72,7 @@ export function AuthProvider({ children }) {
       signOut,
       resendVerification,
       subscribeNewsletter,
+      submitOrder,
     }),
     [user, loading]
   );

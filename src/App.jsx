@@ -10,11 +10,13 @@ import VideoShowcase from './components/VideoShowcase';
 import AuthGate from './components/AuthGate';
 import NewsletterSignup from './components/NewsletterSignup';
 import Community from './components/Community';
+import AmbientBackground from './components/AmbientBackground';
 import { useLocale } from './hooks/useLocale';
 import { CATEGORIES, PRODUCTS } from './data/products';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
+  const [hasNavigated, setHasNavigated] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
   const { t } = useLocale();
 
@@ -24,25 +26,33 @@ export default function App() {
     <CartProvider>
       <CustomCursor />
       <AuthGate>
+        <AmbientBackground />
         <MadridVibeBanner />
         <Navbar
           categories={CATEGORIES}
           activeCategory={activeCategory}
-          onSelectCategory={setActiveCategory}
+          onSelectCategory={(category) => {
+            setActiveCategory(category);
+            setHasNavigated(true);
+          }}
           onGoHome={() => {
             setActiveCategory(CATEGORIES[0]);
+            setHasNavigated(false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         />
 
-        <VideoShowcase
-          src={`${import.meta.env.BASE_URL}media/promo.mp4`}
-          title={t('newCollection')}
-        />
+        <div className={hasNavigated ? 'lg:flex lg:items-start' : ''}>
+          <VideoShowcase
+            src={`${import.meta.env.BASE_URL}media/promo.mp4`}
+            title={t('newCollection')}
+            compact={hasNavigated}
+          />
 
-        <main className="flex-1">
-          <ProductGrid products={filteredProducts} onQuickView={setQuickViewProduct} />
-        </main>
+          <main className="flex-1">
+            <ProductGrid products={filteredProducts} onQuickView={setQuickViewProduct} />
+          </main>
+        </div>
 
         <Community />
         <NewsletterSignup />
