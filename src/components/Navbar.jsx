@@ -1,17 +1,23 @@
 import { motion } from 'framer-motion';
 import { useCart } from '../hooks/useCart';
+import { useLocale } from '../hooks/useLocale';
 import logo from '../assets/brand/logo-black.png';
 
-export default function Navbar({ categories, activeCategory, onSelectCategory }) {
+export default function Navbar({ categories, activeCategory, onSelectCategory, onGoHome }) {
   const { items, openCart } = useCart();
+  const { t, categoryLabel } = useLocale();
   const itemCount = items.reduce((acc, i) => acc + i.qty, 0);
 
   return (
     <nav className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 sticky top-0 bg-white/90 backdrop-blur z-30">
-      <span className="flex items-center gap-2 font-bold text-lg tracking-tight">
-        <img src={logo} alt="Join the Class" className="h-7 w-auto" />
-        Join the Class
-      </span>
+      <button
+        onClick={onGoHome}
+        aria-label={t('goHome')}
+        className="flex items-center gap-2 font-bold text-lg tracking-tight"
+      >
+        <img src={logo} alt={t('brand')} className="h-7 w-auto" />
+        {t('brand')}
+      </button>
 
       <ul className="flex items-center gap-6">
         {categories.map((category) => (
@@ -22,7 +28,7 @@ export default function Navbar({ categories, activeCategory, onSelectCategory })
                 activeCategory === category ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
               }`}
             >
-              {category}
+              {categoryLabel(category)}
             </button>
             {activeCategory === category && (
               <motion.div
@@ -37,10 +43,10 @@ export default function Navbar({ categories, activeCategory, onSelectCategory })
 
       <button
         onClick={openCart}
-        aria-label="Abrir carrito"
+        aria-label={t('openCart')}
         className="relative text-sm font-medium hover:text-neutral-600"
       >
-        Vestidor
+        {t('wardrobe')}
         {itemCount > 0 && (
           <span className="absolute -top-2 -right-3 bg-neutral-900 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
             {itemCount}

@@ -1,29 +1,39 @@
-import hombreBlanca from '../assets/products/hombre-blanca.jpeg';
-import hombreNegra from '../assets/products/hombre-negra.jpeg';
-import hombreRoja from '../assets/products/hombre-roja.jpeg';
-import hombreCamel from '../assets/products/hombre-camel.jpeg';
-import hombreOlivo from '../assets/products/hombre-olivo.jpeg';
-import hombrePalm from '../assets/products/hombre-palm.jpeg';
-import hombreUsa from '../assets/products/hombre-usa.jpeg';
-import hombreCupido from '../assets/products/hombre-cupido.jpeg';
-import hombreFloralGold from '../assets/products/hombre-floral-gold.jpeg';
-import hombreRosario from '../assets/products/hombre-rosario.jpeg';
-import hombreCvltRojo from '../assets/products/hombre-cvlt-rojo.jpeg';
-import hombreCvltNegro from '../assets/products/hombre-cvlt-negro.jpeg';
-import hombreOnesBlanco from '../assets/products/hombre-ones-blanco.jpeg';
-import hombreOnesNegro from '../assets/products/hombre-ones-negro.jpeg';
-import hombreMotivation from '../assets/products/hombre-motivation.jpeg';
-import hombreLegends from '../assets/products/hombre-legends.jpeg';
-import hombreCeleste from '../assets/products/hombre-celeste.jpeg';
-import hombreDusk from '../assets/products/hombre-dusk.jpeg';
-import conjuntoClNegro from '../assets/products/conjunto-cl-negro.jpeg';
-import conjuntoScriptNegro from '../assets/products/conjunto-script-negro.jpeg';
-import mujerCrema from '../assets/products/mujer-crema.jpeg';
-import mujerRoja from '../assets/products/mujer-roja.jpeg';
-import mujerTerracota from '../assets/products/mujer-terracota.jpeg';
-import mujerNegra from '../assets/products/mujer-negra.jpeg';
-import mujerVerde from '../assets/products/mujer-verde.jpeg';
-import mujerLima from '../assets/products/mujer-lima.jpeg';
+import hombreBlanca from '../assets/products/hombre-blanca.webp';
+import hombreNegra from '../assets/products/hombre-negra.webp';
+import hombreRoja from '../assets/products/hombre-roja.webp';
+import hombreCamel from '../assets/products/hombre-camel.webp';
+import hombreOlivo from '../assets/products/hombre-olivo.webp';
+import hombrePalm from '../assets/products/hombre-palm.webp';
+import hombrePalmBack from '../assets/products/hombre-palm-back.webp';
+import hombreUsa from '../assets/products/hombre-usa.webp';
+import hombreUsaBack from '../assets/products/hombre-usa-back.webp';
+import hombreCupido from '../assets/products/hombre-cupido.webp';
+import hombreCupidoBack from '../assets/products/hombre-cupido-back.webp';
+import hombreFloralGold from '../assets/products/hombre-floral-gold.webp';
+import hombreFloralGoldBack from '../assets/products/hombre-floral-gold-back.webp';
+import hombreRosario from '../assets/products/hombre-rosario.webp';
+import hombreRosarioBack from '../assets/products/hombre-rosario-back.webp';
+import hombreCvltRojo from '../assets/products/hombre-cvlt-rojo.webp';
+import hombreCvltRojoBack from '../assets/products/hombre-cvlt-rojo-back.webp';
+import hombreCvltNegro from '../assets/products/hombre-cvlt-negro.webp';
+import hombreCvltNegroBack from '../assets/products/hombre-cvlt-negro-back.webp';
+import hombreOnesBlanco from '../assets/products/hombre-ones-blanco.webp';
+import hombreOnesNegro from '../assets/products/hombre-ones-negro.webp';
+import hombreMotivation from '../assets/products/hombre-motivation.webp';
+import hombreMotivationBack from '../assets/products/hombre-motivation-back.webp';
+import hombreLegends from '../assets/products/hombre-legends.webp';
+import hombreLegendsBack from '../assets/products/hombre-legends-back.webp';
+import hombreCeleste from '../assets/products/hombre-celeste.webp';
+import hombreDusk from '../assets/products/hombre-dusk.webp';
+import hombreDuskBack from '../assets/products/hombre-dusk-back.webp';
+import conjuntoClNegro from '../assets/products/conjunto-cl-negro.webp';
+import conjuntoScriptNegro from '../assets/products/conjunto-script-negro.webp';
+import mujerCrema from '../assets/products/mujer-crema.webp';
+import mujerRoja from '../assets/products/mujer-roja.webp';
+import mujerTerracota from '../assets/products/mujer-terracota.webp';
+import mujerNegra from '../assets/products/mujer-negra.webp';
+import mujerVerde from '../assets/products/mujer-verde.webp';
+import mujerLima from '../assets/products/mujer-lima.webp';
 
 export const CATEGORIES = ['Hombre', 'Mujer', 'Conjuntos'];
 
@@ -33,9 +43,9 @@ const TALLAS_CROP = ['XS', 'S', 'M', 'L'];
 export const PRODUCTS = [
   {
     id: 'classic-c',
-    name: 'Playera Classic C',
+    name: 'Camiseta Classic C',
     category: 'Hombre',
-    price: 32,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
     variants: [
       { color: 'Blanco', hex: '#f5f5f4', img: hombreBlanca },
@@ -47,44 +57,44 @@ export const PRODUCTS = [
   },
   {
     id: 'rosario',
-    name: 'Playera Rosario',
+    name: 'Camiseta Rosario',
     category: 'Hombre',
-    price: 34,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreRosario }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreRosario, back: hombreRosarioBack }],
   },
   {
     id: 'calm-sun',
-    name: 'Playera Calm Under The Sun',
+    name: 'Camiseta Calm Under The Sun',
     category: 'Hombre',
-    price: 38,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombrePalm }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombrePalm, back: hombrePalmBack }],
   },
   {
     id: 'join-cvlt',
-    name: 'Playera Join The Cvlt',
+    name: 'Camiseta Join The Cvlt',
     category: 'Hombre',
-    price: 38,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
     variants: [
-      { color: 'Rojo', hex: '#b91c1c', img: hombreCvltRojo },
-      { color: 'Negro', hex: '#18181b', img: hombreCvltNegro },
+      { color: 'Rojo', hex: '#b91c1c', img: hombreCvltRojo, back: hombreCvltRojoBack },
+      { color: 'Negro', hex: '#18181b', img: hombreCvltNegro, back: hombreCvltNegroBack },
     ],
   },
   {
     id: 'floral-gold',
-    name: 'Playera Floral Gold',
+    name: 'Camiseta Floral Gold',
     category: 'Hombre',
-    price: 35,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Camel', hex: '#b08d57', img: hombreFloralGold }],
+    variants: [{ color: 'Camel', hex: '#b08d57', img: hombreFloralGold, back: hombreFloralGoldBack }],
   },
   {
     id: 'join-ones',
-    name: 'Playera Join The Ones',
+    name: 'Camiseta Join The Ones',
     category: 'Hombre',
-    price: 36,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
     variants: [
       { color: 'Blanco', hex: '#f5f5f4', img: hombreOnesBlanco },
@@ -93,57 +103,57 @@ export const PRODUCTS = [
   },
   {
     id: 'motivation',
-    name: 'Playera Motivation Shine',
+    name: 'Camiseta Motivation Shine',
     category: 'Hombre',
-    price: 36,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreMotivation }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreMotivation, back: hombreMotivationBack }],
   },
   {
     id: 'legends',
-    name: 'Playera Legends',
+    name: 'Camiseta Legends',
     category: 'Hombre',
-    price: 36,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreLegends }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreLegends, back: hombreLegendsBack }],
   },
   {
     id: 'celeste',
-    name: 'Playera Join The Class Celeste',
+    name: 'Camiseta Join The Class Celeste',
     category: 'Hombre',
-    price: 32,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
     variants: [{ color: 'Celeste', hex: '#93c5fd', img: hombreCeleste }],
   },
   {
     id: 'usa',
-    name: 'Playera United States',
+    name: 'Camiseta United States',
     category: 'Hombre',
-    price: 38,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreUsa }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreUsa, back: hombreUsaBack }],
   },
   {
     id: 'cupido',
-    name: 'Playera Cupido',
+    name: 'Camiseta Cupido',
     category: 'Hombre',
-    price: 38,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreCupido }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreCupido, back: hombreCupidoBack }],
   },
   {
     id: 'dusk-shade',
-    name: 'Playera Dusk Shade',
+    name: 'Camiseta Dusk Shade',
     category: 'Hombre',
-    price: 36,
+    type: 'single',
     sizes: TALLAS_CAMISETA,
-    variants: [{ color: 'Negro', hex: '#18181b', img: hombreDusk }],
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreDusk, back: hombreDuskBack }],
   },
   {
     id: 'conjunto-cl',
     name: 'Conjunto CL Print',
     category: 'Conjuntos',
-    price: 58,
+    type: 'set',
     sizes: TALLAS_CAMISETA,
     variants: [{ color: 'Negro', hex: '#18181b', img: conjuntoClNegro }],
   },
@@ -151,7 +161,7 @@ export const PRODUCTS = [
     id: 'conjunto-script',
     name: 'Conjunto Join The Class Script',
     category: 'Conjuntos',
-    price: 58,
+    type: 'set',
     sizes: TALLAS_CAMISETA,
     variants: [{ color: 'Negro', hex: '#18181b', img: conjuntoScriptNegro }],
   },
@@ -159,7 +169,7 @@ export const PRODUCTS = [
     id: 'crop-rosas',
     name: 'Crop Top Rosas',
     category: 'Mujer',
-    price: 28,
+    type: 'single',
     sizes: TALLAS_CROP,
     variants: [
       { color: 'Crema', hex: '#efe4cf', img: mujerCrema },

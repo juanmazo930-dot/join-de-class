@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion';
-
-const MADRID_MESSAGES = [
-  { time: 'morning', text: 'Buenos días, Madrid ☀️ — recogida gratis hoy en Malasaña' },
-  { time: 'afternoon', text: 'Sobremesa en el Retiro 🌳 — envío en el día para pedidos de Madrid capital' },
-  { time: 'evening', text: 'Tardeo en Chueca 🍷 — nueva colección disponible' },
-  { time: 'night', text: 'Madrid nunca duerme 🌙 — compra ahora, recibe mañana' },
-];
+import { useLocale } from '../hooks/useLocale';
+import { MADRID_BANNER } from '../i18n/translations';
 
 function getTimeSlot() {
   const hour = new Date().getHours();
@@ -16,8 +11,9 @@ function getTimeSlot() {
 }
 
 export default function MadridVibeBanner() {
+  const { locale } = useLocale();
   const slot = getTimeSlot();
-  const message = MADRID_MESSAGES.find((m) => m.time === slot) ?? MADRID_MESSAGES[0];
+  const message = MADRID_BANNER[locale][slot];
 
   return (
     <motion.div
@@ -26,7 +22,7 @@ export default function MadridVibeBanner() {
       transition={{ duration: 0.4 }}
       className="w-full bg-neutral-900 text-white text-sm text-center py-2 px-4"
     >
-      {message.text}
+      {message}
     </motion.div>
   );
 }

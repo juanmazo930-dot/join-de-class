@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../hooks/useCart';
+import { useLocale } from '../hooks/useLocale';
+import { getPrice, formatPrice } from '../utils/pricing';
+import FlipImage from './FlipImage';
 
 export default function QuickViewModal({ product, onClose }) {
   const { addItem } = useCart();
+  const { t, categoryLabel, currency } = useLocale();
   const [zoomed, setZoomed] = useState(false);
   const [origin, setOrigin] = useState('50% 50%');
   const [variantIndex, setVariantIndex] = useState(0);
@@ -32,7 +36,8 @@ export default function QuickViewModal({ product, onClose }) {
     addItem({
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: getPrice(product.type, currency),
+      currency,
       color: variant.color,
       img: variant.img,
       size,
@@ -65,39 +70,38 @@ export default function QuickViewModal({ product, onClose }) {
                 onMouseLeave={() => setZoomed(false)}
                 onMouseMove={handleMouseMove}
               >
-                <img
-                  src={variant.img}
+                <FlipImage
+                  front={variant.img}
+                  back={variant.back}
                   alt={`${product.name} ${variant.color}`}
-                  className="w-full h-full object-cover transition-transform duration-300 ease-out"
-                  style={{
-                    transformOrigin: origin,
-                    transform: zoomed ? 'scale(1.8)' : 'scale(1)',
-                  }}
+                  className="w-full h-full"
+                  imgClassName="transition-transform duration-300 ease-out"
+                  style={{ transformOrigin: origin, transform: zoomed ? 'scale(1.8)' : 'scale(1)' }}
                 />
               </div>
 
               <div className="p-6 flex flex-col overflow-y-auto">
                 <button
                   onClick={onClose}
-                  aria-label="Cerrar vista rápida"
+                  aria-label={t('closeQuickView')}
                   className="self-end text-neutral-500 hover:text-black mb-4"
                 >
                   ✕
                 </button>
                 <h3 className="text-2xl font-bold text-neutral-900">{product.name}</h3>
-                <p className="text-neutral-500 mt-1">{product.category}</p>
-                <p className="text-xl font-semibold mt-4">{product.price} €</p>
+                <p className="text-neutral-500 mt-1">{categoryLabel(product.category)}</p>
+                <p className="text-xl font-semibold mt-4">{formatPrice(product.type, currency)}</p>
 
                 <div className="mt-6">
                   <p className="text-sm font-medium text-neutral-700 mb-2">
-                    Color: {variant.color}
+                    {t('color')}: {variant.color}
                   </p>
                   <div className="flex items-center gap-2">
                     {product.variants.map((v, i) => (
                       <button
                         key={v.color}
                         onClick={() => setVariantIndex(i)}
-                        aria-label={`Color ${v.color}`}
+                        aria-label={`${t('color')} ${v.color}`}
                         title={v.color}
                         className={`w-7 h-7 rounded-full border ${
                           i === variantIndex ? 'ring-2 ring-offset-1 ring-neutral-900' : 'border-neutral-300'
@@ -109,7 +113,7 @@ export default function QuickViewModal({ product, onClose }) {
                 </div>
 
                 <div className="mt-5">
-                  <p className="text-sm font-medium text-neutral-700 mb-2">Talla</p>
+                  <p className="text-sm font-medium text-neutral-700 mb-2">{t('size')}</p>
                   <div className="flex items-center gap-2">
                     {product.sizes.map((s) => (
                       <button
@@ -128,15 +132,13 @@ export default function QuickViewModal({ product, onClose }) {
                 </div>
 
                 <div className="mt-auto space-y-2 pt-6">
-                  {!size && (
-                    <p className="text-xs text-neutral-500">Elige una talla para continuar.</p>
-                  )}
+                  {!size && <p className="text-xs text-neutral-500">{t('pickSize')}</p>}
                   <button
                     onClick={handleAddToCart}
                     disabled={!size}
                     className="w-full bg-neutral-900 text-white py-3 rounded-lg hover:bg-neutral-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                   >
-                    Añadir al vestidor
+                    {t('addToCart')}
                   </button>
                 </div>
               </div>

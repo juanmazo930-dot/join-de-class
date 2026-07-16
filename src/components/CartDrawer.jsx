@@ -1,8 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../hooks/useCart';
+import { useLocale } from '../hooks/useLocale';
+import { formatAmount } from '../utils/pricing';
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, total, cartKey } = useCart();
+  const { t, currency } = useLocale();
 
   return (
     <AnimatePresence>
@@ -23,10 +26,10 @@ export default function CartDrawer() {
             className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col p-6"
           >
             <div className="flex justify-between items-center border-b pb-4">
-              <h2 className="text-2xl font-bold font-sans text-neutral-900">Tu Vestidor</h2>
+              <h2 className="text-2xl font-bold font-sans text-neutral-900">{t('yourWardrobe')}</h2>
               <button
                 onClick={closeCart}
-                aria-label="Cerrar carrito"
+                aria-label={t('closeCart')}
                 className="text-neutral-500 hover:text-black"
               >
                 ✕
@@ -35,7 +38,7 @@ export default function CartDrawer() {
 
             <div className="flex-1 overflow-y-auto py-4">
               {items.length === 0 ? (
-                <p className="text-neutral-500 text-center mt-20">El vestidor está vacío.</p>
+                <p className="text-neutral-500 text-center mt-20">{t('emptyCart')}</p>
               ) : (
                 <motion.div layout className="space-y-4">
                   <AnimatePresence>
@@ -52,18 +55,19 @@ export default function CartDrawer() {
                         <div className="flex-1">
                           <h4 className="font-semibold">{item.name}</h4>
                           <p className="text-xs text-neutral-500">
-                            {item.color} · Talla {item.size}
+                            {item.color} · {t('size')} {item.size}
                           </p>
                           <p className="text-sm text-neutral-600">
-                            {item.price} € {item.qty > 1 && `× ${item.qty}`}
+                            {formatAmount(item.price, item.currency ?? currency)}{' '}
+                            {item.qty > 1 && `× ${item.qty}`}
                           </p>
                         </div>
                         <button
                           onClick={() => removeItem(cartKey(item))}
-                          aria-label={`Quitar ${item.name}`}
+                          aria-label={`${t('remove')} ${item.name}`}
                           className="text-neutral-400 hover:text-red-500 text-sm"
                         >
-                          Quitar
+                          {t('remove')}
                         </button>
                       </motion.div>
                     ))}
@@ -74,14 +78,14 @@ export default function CartDrawer() {
 
             <div className="border-t pt-4 space-y-3">
               <div className="flex justify-between font-bold">
-                <span>Total estimado:</span>
-                <span>{total} €</span>
+                <span>{t('total')}</span>
+                <span>{formatAmount(total, currency)}</span>
               </div>
               <button
                 disabled={items.length === 0}
                 className="w-full bg-neutral-900 text-white py-3 rounded-lg hover:bg-neutral-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Finalizar Pedido (Envío gratis en Madrid)
+                {t('checkout')} ({t('freeShipping')})
               </button>
             </div>
           </motion.div>
