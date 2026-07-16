@@ -9,6 +9,7 @@ import ProductGrid from './components/ProductGrid';
 import VideoShowcase from './components/VideoShowcase';
 import AuthGate from './components/AuthGate';
 import NewsletterSignup from './components/NewsletterSignup';
+import Community from './components/Community';
 import { useLocale } from './hooks/useLocale';
 import { CATEGORIES, PRODUCTS } from './data/products';
 
@@ -43,6 +44,7 @@ export default function App() {
           <ProductGrid products={filteredProducts} onQuickView={setQuickViewProduct} />
         </main>
 
+        <Community />
         <NewsletterSignup />
 
         <CartDrawer />

@@ -3,6 +3,10 @@ import hombreNegra from '../assets/products/hombre-negra.webp';
 import hombreRoja from '../assets/products/hombre-roja.webp';
 import hombreCamel from '../assets/products/hombre-camel.webp';
 import hombreOlivo from '../assets/products/hombre-olivo.webp';
+import hombreGris from '../assets/products/hombre-gris.webp';
+import hombreSkater from '../assets/products/hombre-skater.webp';
+import hombreGirasoles from '../assets/products/hombre-girasoles.webp';
+import hombreVintageCars from '../assets/products/hombre-vintage-cars.webp';
 import hombrePalm from '../assets/products/hombre-palm.webp';
 import hombrePalmBack from '../assets/products/hombre-palm-back.webp';
 import hombreUsa from '../assets/products/hombre-usa.webp';
@@ -53,7 +57,32 @@ export const PRODUCTS = [
       { color: 'Rojo', hex: '#b91c1c', img: hombreRoja },
       { color: 'Camel', hex: '#b08d57', img: hombreCamel },
       { color: 'Olivo', hex: '#6b7f3a', img: hombreOlivo },
+      { color: 'Gris', hex: '#52525b', img: hombreGris },
     ],
+  },
+  {
+    id: 'skater',
+    name: 'Camiseta Skater Skull',
+    category: 'Hombre',
+    type: 'single',
+    sizes: TALLAS_CAMISETA,
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreSkater }],
+  },
+  {
+    id: 'girasoles',
+    name: 'Camiseta Girasoles',
+    category: 'Hombre',
+    type: 'single',
+    sizes: TALLAS_CAMISETA,
+    variants: [{ color: 'Negro', hex: '#18181b', img: hombreGirasoles }],
+  },
+  {
+    id: 'vintage-cars',
+    name: 'Camiseta Vintage Cars',
+    category: 'Hombre',
+    type: 'single',
+    sizes: TALLAS_CAMISETA,
+    variants: [{ color: 'Crema', hex: '#efe4cf', img: hombreVintageCars }],
   },
   {
     id: 'rosario',
