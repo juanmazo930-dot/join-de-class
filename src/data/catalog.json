@@ -1,0 +1,144 @@
+{
+  "brand": "Join the Class",
+  "products": [
+    {
+      "id": "classic-c",
+      "name": "Playera Classic C",
+      "category": "Hombre",
+      "price": 32,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [
+        { "color": "Blanco", "file": "hombre-blanca.jpeg" },
+        { "color": "Negro", "file": "hombre-negra.jpeg" },
+        { "color": "Rojo", "file": "hombre-roja.jpeg" },
+        { "color": "Camel", "file": "hombre-camel.jpeg" },
+        { "color": "Olivo", "file": "hombre-olivo.jpeg" }
+      ]
+    },
+    {
+      "id": "rosario",
+      "name": "Playera Rosario",
+      "category": "Hombre",
+      "price": 34,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-rosario.jpeg" }]
+    },
+    {
+      "id": "calm-sun",
+      "name": "Playera Calm Under The Sun",
+      "category": "Hombre",
+      "price": 38,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-palm.jpeg" }]
+    },
+    {
+      "id": "join-cvlt",
+      "name": "Playera Join The Cvlt",
+      "category": "Hombre",
+      "price": 38,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [
+        { "color": "Rojo", "file": "hombre-cvlt-rojo.jpeg" },
+        { "color": "Negro", "file": "hombre-cvlt-negro.jpeg" }
+      ]
+    },
+    {
+      "id": "floral-gold",
+      "name": "Playera Floral Gold",
+      "category": "Hombre",
+      "price": 35,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Camel", "file": "hombre-floral-gold.jpeg" }]
+    },
+    {
+      "id": "join-ones",
+      "name": "Playera Join The Ones",
+      "category": "Hombre",
+      "price": 36,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [
+        { "color": "Blanco", "file": "hombre-ones-blanco.jpeg" },
+        { "color": "Negro", "file": "hombre-ones-negro.jpeg" }
+      ]
+    },
+    {
+      "id": "motivation",
+      "name": "Playera Motivation Shine",
+      "category": "Hombre",
+      "price": 36,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-motivation.jpeg" }]
+    },
+    {
+      "id": "legends",
+      "name": "Playera Legends",
+      "category": "Hombre",
+      "price": 36,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-legends.jpeg" }]
+    },
+    {
+      "id": "celeste",
+      "name": "Playera Join The Class Celeste",
+      "category": "Hombre",
+      "price": 32,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Celeste", "file": "hombre-celeste.jpeg" }]
+    },
+    {
+      "id": "usa",
+      "name": "Playera United States",
+      "category": "Hombre",
+      "price": 38,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-usa.jpeg" }]
+    },
+    {
+      "id": "cupido",
+      "name": "Playera Cupido",
+      "category": "Hombre",
+      "price": 38,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-cupido.jpeg" }]
+    },
+    {
+      "id": "dusk-shade",
+      "name": "Playera Dusk Shade",
+      "category": "Hombre",
+      "price": 36,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-dusk.jpeg" }]
+    },
+    {
+      "id": "conjunto-cl",
+      "name": "Conjunto CL Print",
+      "category": "Conjuntos",
+      "price": 58,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "conjunto-cl-negro.jpeg" }]
+    },
+    {
+      "id": "conjunto-script",
+      "name": "Conjunto Join The Class Script",
+      "category": "Conjuntos",
+      "price": 58,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "conjunto-script-negro.jpeg" }]
+    },
+    {
+      "id": "crop-rosas",
+      "name": "Crop Top Rosas",
+      "category": "Mujer",
+      "price": 28,
+      "sizes": ["XS", "S", "M", "L"],
+      "variants": [
+        { "color": "Crema", "file": "mujer-crema.jpeg" },
+        { "color": "Rojo", "file": "mujer-roja.jpeg" },
+        { "color": "Terracota", "file": "mujer-terracota.jpeg" },
+        { "color": "Negro", "file": "mujer-negra.jpeg" },
+        { "color": "Verde", "file": "mujer-verde.jpeg" },
+        { "color": "Lima", "file": "mujer-lima.jpeg" }
+      ]
+    }
+  ]
+}

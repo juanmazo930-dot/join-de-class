@@ -1,0 +1,210 @@
+[
+  {
+    "product": "Playera Classic C",
+    "category": "Hombre",
+    "color": "Blanco",
+    "price": 32,
+    "image": "marketing/instagram/hombre/classic-c/blanco.jpg",
+    "caption": "marketing/instagram/hombre/classic-c/blanco-caption.txt"
+  },
+  {
+    "product": "Playera Classic C",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 32,
+    "image": "marketing/instagram/hombre/classic-c/negro.jpg",
+    "caption": "marketing/instagram/hombre/classic-c/negro-caption.txt"
+  },
+  {
+    "product": "Playera Classic C",
+    "category": "Hombre",
+    "color": "Rojo",
+    "price": 32,
+    "image": "marketing/instagram/hombre/classic-c/rojo.jpg",
+    "caption": "marketing/instagram/hombre/classic-c/rojo-caption.txt"
+  },
+  {
+    "product": "Playera Classic C",
+    "category": "Hombre",
+    "color": "Camel",
+    "price": 32,
+    "image": "marketing/instagram/hombre/classic-c/camel.jpg",
+    "caption": "marketing/instagram/hombre/classic-c/camel-caption.txt"
+  },
+  {
+    "product": "Playera Classic C",
+    "category": "Hombre",
+    "color": "Olivo",
+    "price": 32,
+    "image": "marketing/instagram/hombre/classic-c/olivo.jpg",
+    "caption": "marketing/instagram/hombre/classic-c/olivo-caption.txt"
+  },
+  {
+    "product": "Playera Rosario",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 34,
+    "image": "marketing/instagram/hombre/rosario/negro.jpg",
+    "caption": "marketing/instagram/hombre/rosario/negro-caption.txt"
+  },
+  {
+    "product": "Playera Calm Under The Sun",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 38,
+    "image": "marketing/instagram/hombre/calm-sun/negro.jpg",
+    "caption": "marketing/instagram/hombre/calm-sun/negro-caption.txt"
+  },
+  {
+    "product": "Playera Join The Cvlt",
+    "category": "Hombre",
+    "color": "Rojo",
+    "price": 38,
+    "image": "marketing/instagram/hombre/join-cvlt/rojo.jpg",
+    "caption": "marketing/instagram/hombre/join-cvlt/rojo-caption.txt"
+  },
+  {
+    "product": "Playera Join The Cvlt",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 38,
+    "image": "marketing/instagram/hombre/join-cvlt/negro.jpg",
+    "caption": "marketing/instagram/hombre/join-cvlt/negro-caption.txt"
+  },
+  {
+    "product": "Playera Floral Gold",
+    "category": "Hombre",
+    "color": "Camel",
+    "price": 35,
+    "image": "marketing/instagram/hombre/floral-gold/camel.jpg",
+    "caption": "marketing/instagram/hombre/floral-gold/camel-caption.txt"
+  },
+  {
+    "product": "Playera Join The Ones",
+    "category": "Hombre",
+    "color": "Blanco",
+    "price": 36,
+    "image": "marketing/instagram/hombre/join-ones/blanco.jpg",
+    "caption": "marketing/instagram/hombre/join-ones/blanco-caption.txt"
+  },
+  {
+    "product": "Playera Join The Ones",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 36,
+    "image": "marketing/instagram/hombre/join-ones/negro.jpg",
+    "caption": "marketing/instagram/hombre/join-ones/negro-caption.txt"
+  },
+  {
+    "product": "Playera Motivation Shine",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 36,
+    "image": "marketing/instagram/hombre/motivation/negro.jpg",
+    "caption": "marketing/instagram/hombre/motivation/negro-caption.txt"
+  },
+  {
+    "product": "Playera Legends",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 36,
+    "image": "marketing/instagram/hombre/legends/negro.jpg",
+    "caption": "marketing/instagram/hombre/legends/negro-caption.txt"
+  },
+  {
+    "product": "Playera Join The Class Celeste",
+    "category": "Hombre",
+    "color": "Celeste",
+    "price": 32,
+    "image": "marketing/instagram/hombre/celeste/celeste.jpg",
+    "caption": "marketing/instagram/hombre/celeste/celeste-caption.txt"
+  },
+  {
+    "product": "Playera United States",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 38,
+    "image": "marketing/instagram/hombre/usa/negro.jpg",
+    "caption": "marketing/instagram/hombre/usa/negro-caption.txt"
+  },
+  {
+    "product": "Playera Cupido",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 38,
+    "image": "marketing/instagram/hombre/cupido/negro.jpg",
+    "caption": "marketing/instagram/hombre/cupido/negro-caption.txt"
+  },
+  {
+    "product": "Playera Dusk Shade",
+    "category": "Hombre",
+    "color": "Negro",
+    "price": 36,
+    "image": "marketing/instagram/hombre/dusk-shade/negro.jpg",
+    "caption": "marketing/instagram/hombre/dusk-shade/negro-caption.txt"
+  },
+  {
+    "product": "Conjunto CL Print",
+    "category": "Conjuntos",
+    "color": "Negro",
+    "price": 58,
+    "image": "marketing/instagram/conjuntos/conjunto-cl/negro.jpg",
+    "caption": "marketing/instagram/conjuntos/conjunto-cl/negro-caption.txt"
+  },
+  {
+    "product": "Conjunto Join The Class Script",
+    "category": "Conjuntos",
+    "color": "Negro",
+    "price": 58,
+    "image": "marketing/instagram/conjuntos/conjunto-script/negro.jpg",
+    "caption": "marketing/instagram/conjuntos/conjunto-script/negro-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Crema",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/crema.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/crema-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Rojo",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/rojo.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/rojo-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Terracota",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/terracota.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/terracota-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Negro",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/negro.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/negro-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Verde",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/verde.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/verde-caption.txt"
+  },
+  {
+    "product": "Crop Top Rosas",
+    "category": "Mujer",
+    "color": "Lima",
+    "price": 28,
+    "image": "marketing/instagram/mujer/crop-rosas/lima.jpg",
+    "caption": "marketing/instagram/mujer/crop-rosas/lima-caption.txt"
+  }
+]

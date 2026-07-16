@@ -6,6 +6,7 @@ import QuickViewModal from './components/QuickViewModal';
 import MadridVibeBanner from './components/MadridVibeBanner';
 import Navbar from './components/Navbar';
 import ProductGrid from './components/ProductGrid';
+import VideoShowcase from './components/VideoShowcase';
 import { CATEGORIES, PRODUCTS } from './data/products';
 
 export default function App() {
@@ -22,6 +23,11 @@ export default function App() {
         categories={CATEGORIES}
         activeCategory={activeCategory}
         onSelectCategory={setActiveCategory}
+      />
+
+      <VideoShowcase
+        src={`${import.meta.env.BASE_URL}media/promo.mp4`}
+        title="Nueva colección — Join the Class"
       />
 
       <main className="flex-1">
