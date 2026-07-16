@@ -5,7 +5,7 @@ import { formatAmount } from '../utils/pricing';
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, total, cartKey } = useCart();
-  const { t, currency } = useLocale();
+  const { t, currency, shippingMessage } = useLocale();
 
   return (
     <AnimatePresence>
@@ -85,8 +85,9 @@ export default function CartDrawer() {
                 disabled={items.length === 0}
                 className="w-full bg-neutral-900 text-white py-3 rounded-lg hover:bg-neutral-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {t('checkout')} ({t('freeShipping')})
+                {t('checkout')}
               </button>
+              <p className="text-xs text-neutral-500 text-center">{shippingMessage}</p>
             </div>
           </motion.div>
         </>

@@ -40,6 +40,11 @@ const es = {
   viewBack: 'Ver espalda',
   newCollection: 'Nueva colección — Join the Class',
   community: 'Así se ve en la calle',
+  buyNow: 'Comprar ahora',
+  addedDefaultSize: 'Talla M añadida — puedes cambiarla en el carrito',
+  shippingEs: 'Envío gratis en España desde 40 €',
+  shippingCo: 'Envío gratis en Colombia desde $160.000 COP',
+  shippingDefault: 'Envíos a España y Colombia',
 };
 
 const en = {
@@ -64,6 +69,11 @@ const en = {
   viewBack: 'View back',
   newCollection: 'New collection — Join the Class',
   community: 'Street style community',
+  buyNow: 'Buy now',
+  addedDefaultSize: 'Size M added — you can change it in the cart',
+  shippingEs: 'Free shipping in Spain over €40',
+  shippingCo: 'Free shipping in Colombia over $160.000 COP',
+  shippingDefault: 'Shipping to Spain and Colombia',
 };
 
 export const STRINGS = { es, en };

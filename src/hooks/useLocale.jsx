@@ -17,6 +17,7 @@ function localeFromBrowser() {
 export function LocaleProvider({ children }) {
   const [locale, setLocale] = useState(localeFromBrowser);
   const [currency, setCurrency] = useState('EUR');
+  const [country, setCountry] = useState(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -27,10 +28,11 @@ export function LocaleProvider({ children }) {
     fetch('https://ipapi.co/json/', { signal: controller.signal })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        const country = data?.country_code;
-        if (!country) return;
-        setLocale(SPANISH_SPEAKING_COUNTRIES.has(country) ? 'es' : 'en');
-        setCurrency(country === 'CO' ? 'COP' : 'EUR');
+        const detectedCountry = data?.country_code;
+        if (!detectedCountry) return;
+        setLocale(SPANISH_SPEAKING_COUNTRIES.has(detectedCountry) ? 'es' : 'en');
+        setCurrency(detectedCountry === 'CO' ? 'COP' : 'EUR');
+        setCountry(detectedCountry);
       })
       .catch(() => {
         // Sin conexion a la API de geolocalizacion: nos quedamos con
@@ -47,8 +49,9 @@ export function LocaleProvider({ children }) {
   const value = useMemo(() => {
     const t = (key) => STRINGS[locale][key] ?? STRINGS.es[key] ?? key;
     const categoryLabel = (category) => CATEGORY_LABELS[locale][category] ?? category;
-    return { locale, currency, t, categoryLabel, setLocale, setCurrency };
-  }, [locale, currency]);
+    const shippingKey = country === 'ES' ? 'shippingEs' : country === 'CO' ? 'shippingCo' : 'shippingDefault';
+    return { locale, currency, country, t, categoryLabel, shippingMessage: t(shippingKey), setLocale, setCurrency };
+  }, [locale, currency, country]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }
