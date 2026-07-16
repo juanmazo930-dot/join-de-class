@@ -19,6 +19,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG_PATH = ROOT / "src" / "data" / "catalog.json"
 PRODUCTS_DIR = ROOT / "src" / "assets" / "products"
+COMMUNITY_DIR = ROOT / "src" / "assets" / "community"
 LOGO_PATH = ROOT / "src" / "assets" / "brand" / "logo-white.png"
 LOGO_BLACK_PATH = ROOT / "src" / "assets" / "brand" / "logo-black.png"
 OUT_VIDEOS = ROOT / "marketing" / "videos"
@@ -202,6 +203,55 @@ def build_collection_video(products, out_path, per_item_s=1.8):
     encode_video(frames(), out_path, FRAME_W, FRAME_H, FPS)
 
 
+def overlay_brand_caption(frame, text, t, fade_in_at=0.35):
+    """Igual que overlay_caption pero para fotos de comunidad: sin precio,
+    solo una linea de marca."""
+    if t < fade_in_at:
+        return frame
+    alpha = min(1.0, (t - fade_in_at) / 0.15)
+    overlay = Image.new("RGBA", frame.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    band_h = 150
+    draw.rectangle(
+        [0, frame.height - band_h, frame.width, frame.height],
+        fill=(10, 10, 10, int(190 * alpha)),
+    )
+    text_font = font(FONT_BLACK, 46)
+    draw.text(
+        (40, frame.height - band_h + 55),
+        text.upper(),
+        font=text_font,
+        fill=(255, 255, 255, int(255 * alpha)),
+    )
+    return Image.alpha_composite(frame.convert("RGBA"), overlay).convert("RGB")
+
+
+def build_hero_mix_video(products, community_files, out_path, product_s=2.2, community_s=1.8):
+    """Video para el home: alterna prendas del catalogo (con precio) y
+    fotos reales de comunidad (sin precio, solo marca)."""
+    n_product = int(product_s * FPS)
+    n_community = int(community_s * FPS)
+
+    def frames():
+        community_iter = iter(community_files)
+        for product in products:
+            variant = product["variants"][0]
+            img = Image.open(PRODUCTS_DIR / variant["file"]).convert("RGB")
+            for i, frame in enumerate(ken_burns_frames(img, n_product, FRAME_W, FRAME_H, 1.0, 1.15)):
+                t = i / max(1, n_product - 1)
+                yield overlay_caption(frame, product["name"], product["price"], t, fade_in_at=0.4)
+
+            community_file = next(community_iter, None)
+            if community_file is None:
+                continue
+            cimg = Image.open(community_file).convert("RGB")
+            for i, frame in enumerate(ken_burns_frames(cimg, n_community, FRAME_W, FRAME_H, 1.0, 1.1)):
+                t = i / max(1, n_community - 1)
+                yield overlay_brand_caption(frame, "Join the Class · Comunidad real", t)
+
+    encode_video(frames(), out_path, FRAME_W, FRAME_H, FPS)
+
+
 def caption_for(product, variant):
     lines = [
         f"{product['name']} — color {variant['color']} 🖤",
@@ -277,6 +327,22 @@ def main():
         out_path = OUT_VIDEOS / "coleccion-completa.mp4"
         build_collection_video(products, out_path)
         print(f"  -> {out_path}")
+
+        print("Generando video mixto (prendas + comunidad) para el home...")
+        featured_ids = [
+            "classic-c", "skater", "girasoles", "join-cvlt", "vintage-cars",
+            "floral-gold", "usa", "cupido", "conjunto-cl", "crop-rosas",
+        ]
+        featured = [p for pid in featured_ids for p in products if p["id"] == pid]
+        community_files = sorted(COMMUNITY_DIR.glob("*.webp"))[:len(featured)]
+        hero_path = OUT_VIDEOS / "hero-mix.mp4"
+        build_hero_mix_video(featured, community_files, hero_path)
+        print(f"  -> {hero_path}")
+
+        promo_path = ROOT / "public" / "media" / "promo.mp4"
+        promo_path.parent.mkdir(parents=True, exist_ok=True)
+        promo_path.write_bytes(hero_path.read_bytes())
+        print(f"  -> {promo_path} (actualizado)")
     else:
         print("(Videos omitidos: pasa --videos para generarlos tambien, tarda mas)")
 

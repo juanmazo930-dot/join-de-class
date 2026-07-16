@@ -17,12 +17,12 @@ const COPY = {
     floorDoor: 'Piso / Puerta',
     postalCode: 'Código postal',
     city: 'Localidad / Provincia',
-    dni: 'DNI / NIE',
+    dni: 'DNI / NIE (opcional, solo si quieres factura)',
     gdpr: 'Acepto la Política de Privacidad y el tratamiento de mis datos conforme al RGPD.',
     submit: 'Confirmar pedido',
     close: 'Cerrar',
     invalidPostal: 'El código postal debe tener 5 dígitos.',
-    invalidDni: 'DNI/NIE no válido.',
+    invalidDni: 'DNI/NIE no válido (déjalo vacío si no necesitas factura).',
     gdprRequired: 'Debes aceptar la Política de Privacidad para continuar.',
     demoNotice:
       'Esto no procesa ningún pago real todavía — no hay pasarela de pago conectada. Solo guarda el pedido para revisión.',
@@ -39,12 +39,12 @@ const COPY = {
     floorDoor: 'Floor / Door',
     postalCode: 'Postal code',
     city: 'City / Province',
-    dni: 'DNI / NIE (Spanish ID)',
+    dni: 'DNI / NIE (optional, only if you need an invoice)',
     gdpr: 'I accept the Privacy Policy and GDPR data processing.',
     submit: 'Confirm order',
     close: 'Close',
     invalidPostal: 'Postal code must be 5 digits.',
-    invalidDni: 'Invalid DNI/NIE.',
+    invalidDni: 'Invalid DNI/NIE (leave it empty if you don\'t need an invoice).',
     gdprRequired: 'You must accept the Privacy Policy to continue.',
     demoNotice: 'This does not process any real payment yet — no payment gateway is connected. It only saves the order for review.',
     success: 'Order received! We will contact you to confirm payment.',
@@ -86,7 +86,7 @@ export default function CheckoutForm({ open, onClose }) {
       setError(c.invalidPostal);
       return;
     }
-    if (!isValidSpanishId(form.dni)) {
+    if (form.dni.trim() && !isValidSpanishId(form.dni)) {
       setError(c.invalidDni);
       return;
     }
@@ -206,7 +206,6 @@ export default function CheckoutForm({ open, onClose }) {
                     />
                   </div>
                   <input
-                    required
                     placeholder={c.dni}
                     value={form.dni}
                     onChange={(e) => update('dni', e.target.value.toUpperCase())}

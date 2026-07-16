@@ -5,7 +5,7 @@
       "id": "classic-c",
       "name": "Camiseta Classic C",
       "category": "Hombre",
-      "price": 32,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -32,14 +32,42 @@
         {
           "color": "Olivo",
           "file": "hombre-olivo.jpeg"
+        },
+        {
+          "color": "Gris",
+          "file": "hombre-gris.jpeg"
         }
       ]
+    },
+    {
+      "id": "skater",
+      "name": "Camiseta Skater Skull",
+      "category": "Hombre",
+      "price": 20,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-skater.jpeg" }]
+    },
+    {
+      "id": "girasoles",
+      "name": "Camiseta Girasoles",
+      "category": "Hombre",
+      "price": 20,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Negro", "file": "hombre-girasoles.jpeg" }]
+    },
+    {
+      "id": "vintage-cars",
+      "name": "Camiseta Vintage Cars",
+      "category": "Hombre",
+      "price": 20,
+      "sizes": ["S", "M", "L", "XL"],
+      "variants": [{ "color": "Crema", "file": "hombre-vintage-cars.jpeg" }]
     },
     {
       "id": "rosario",
       "name": "Camiseta Rosario",
       "category": "Hombre",
-      "price": 34,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -57,7 +85,7 @@
       "id": "calm-sun",
       "name": "Camiseta Calm Under The Sun",
       "category": "Hombre",
-      "price": 38,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -75,7 +103,7 @@
       "id": "join-cvlt",
       "name": "Camiseta Join The Cvlt",
       "category": "Hombre",
-      "price": 38,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -97,7 +125,7 @@
       "id": "floral-gold",
       "name": "Camiseta Floral Gold",
       "category": "Hombre",
-      "price": 35,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -115,7 +143,7 @@
       "id": "join-ones",
       "name": "Camiseta Join The Ones",
       "category": "Hombre",
-      "price": 36,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -137,7 +165,7 @@
       "id": "motivation",
       "name": "Camiseta Motivation Shine",
       "category": "Hombre",
-      "price": 36,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -155,7 +183,7 @@
       "id": "legends",
       "name": "Camiseta Legends",
       "category": "Hombre",
-      "price": 36,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -173,7 +201,7 @@
       "id": "celeste",
       "name": "Camiseta Join The Class Celeste",
       "category": "Hombre",
-      "price": 32,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -191,7 +219,7 @@
       "id": "usa",
       "name": "Camiseta United States",
       "category": "Hombre",
-      "price": 38,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -209,7 +237,7 @@
       "id": "cupido",
       "name": "Camiseta Cupido",
       "category": "Hombre",
-      "price": 38,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -227,7 +255,7 @@
       "id": "dusk-shade",
       "name": "Camiseta Dusk Shade",
       "category": "Hombre",
-      "price": 36,
+      "price": 20,
       "sizes": [
         "S",
         "M",
@@ -245,7 +273,7 @@
       "id": "conjunto-cl",
       "name": "Conjunto CL Print",
       "category": "Conjuntos",
-      "price": 58,
+      "price": 40,
       "sizes": [
         "S",
         "M",
@@ -263,7 +291,7 @@
       "id": "conjunto-script",
       "name": "Conjunto Join The Class Script",
       "category": "Conjuntos",
-      "price": 58,
+      "price": 40,
       "sizes": [
         "S",
         "M",
@@ -281,7 +309,7 @@
       "id": "crop-rosas",
       "name": "Crop Top Rosas",
       "category": "Mujer",
-      "price": 28,
+      "price": 20,
       "sizes": [
         "XS",
         "S",
