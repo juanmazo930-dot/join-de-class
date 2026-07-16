@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --scroll-behavior: smooth;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #e5e5e5 0px, #f0f0f0 40px, #e5e5e5 80px);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  .shimmer {
+    background: linear-gradient(90deg, #27272a 0px, #3f3f46 40px, #27272a 80px);
+    background-size: 800px 100%;
+  }
+}
