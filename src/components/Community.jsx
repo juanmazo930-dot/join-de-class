@@ -10,8 +10,9 @@ import c7 from '../assets/community/community-7.webp';
 import c8 from '../assets/community/community-8.webp';
 import c9 from '../assets/community/community-9.webp';
 import c10 from '../assets/community/community-10.webp';
+import c11 from '../assets/community/community-11.webp';
 
-const PHOTOS = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
+const PHOTOS = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11];
 
 export default function Community() {
   const { t } = useLocale();
