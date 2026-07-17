@@ -7,6 +7,7 @@ import MadridVibeBanner from './components/MadridVibeBanner';
 import Navbar from './components/Navbar';
 import ProductGrid from './components/ProductGrid';
 import VideoShowcase from './components/VideoShowcase';
+import MenHero from './components/MenHero';
 import AuthGate from './components/AuthGate';
 import NewsletterSignup from './components/NewsletterSignup';
 import Community from './components/Community';
@@ -41,6 +42,8 @@ export default function App() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         />
+
+        {activeCategory === 'Hombre' && <MenHero />}
 
         <div className={hasNavigated ? 'lg:flex lg:items-start' : ''}>
           <VideoShowcase
