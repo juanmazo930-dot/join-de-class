@@ -12,8 +12,8 @@ export default function VideoShowcase({ src, title = 'Nueva colección', compact
         transition={{ type: 'spring', stiffness: 220, damping: 28 }}
         className={
           compact
-            ? 'relative w-full lg:sticky lg:top-20 aspect-[4/5] overflow-hidden rounded-lg lg:mt-4 lg:ml-4'
-            : 'relative w-full max-w-md md:max-w-xl lg:max-w-2xl mx-auto aspect-[4/5] overflow-hidden'
+            ? 'relative w-full lg:sticky lg:top-20 aspect-[4/5] max-h-[60vh] overflow-hidden rounded-lg lg:mt-4 lg:ml-4'
+            : 'relative w-full max-w-md md:max-w-xl lg:max-w-2xl mx-auto aspect-[4/5] max-h-[60vh] overflow-hidden'
         }
       >
         <video
