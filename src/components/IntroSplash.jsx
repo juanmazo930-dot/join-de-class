@@ -77,16 +77,17 @@ export default function IntroSplash() {
 
       {/* flash burst the instant the light sweep hits the C */}
       <motion.div
-        className="pointer-events-none absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="pointer-events-none absolute left-[48.9%] top-[54.7%] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{ background: 'radial-gradient(circle, rgba(255,247,214,0.9), rgba(250,204,21,0.3) 45%, transparent 70%)' }}
         initial={{ opacity: 0, width: 40, height: 40 }}
         animate={activated ? { opacity: [0, 1, 0], width: [40, 420, 480], height: [40, 420, 480] } : {}}
         transition={{ duration: C_POP_DURATION / 1000, ease: 'easeOut' }}
       />
 
-      {/* the C monogram, reborn in 3D when the light sweep touches it */}
+      {/* the C monogram, reborn in 3D when the light sweep touches it - aligned to the
+          actual painted C in the photo (measured: center 48.9%/54.7%, ~42% of image height) */}
       <div
-        className="pointer-events-none absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 w-[34%] max-w-[220px] aspect-[134/145]"
+        className="pointer-events-none absolute left-[48.9%] top-[54.7%] -translate-x-1/2 -translate-y-1/2 h-[16vh] md:h-[19.3vh] aspect-[134/145]"
         style={{ perspective: 900 }}
       >
         <motion.div
