@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CartProvider } from './hooks/useCart';
+import IntroSplash from './components/IntroSplash';
 import CustomCursor from './components/CustomCursor';
 import CartDrawer from './components/CartDrawer';
 import QuickViewModal from './components/QuickViewModal';
@@ -25,6 +26,7 @@ export default function App() {
 
   return (
     <CartProvider>
+      <IntroSplash />
       <CustomCursor />
       <AuthGate>
         <AmbientBackground />
