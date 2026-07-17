@@ -43,7 +43,7 @@ export default function App() {
           }}
         />
 
-        {activeCategory === 'Hombre' && <MenHero />}
+        <MenHero active={activeCategory === 'Hombre'} />
 
         <div className={hasNavigated ? 'lg:flex lg:items-start' : ''}>
           <VideoShowcase
