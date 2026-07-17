@@ -22,7 +22,9 @@ import hombreCvltRojoBack from '../assets/products/hombre-cvlt-rojo-back.webp';
 import hombreCvltNegro from '../assets/products/hombre-cvlt-negro.webp';
 import hombreCvltNegroBack from '../assets/products/hombre-cvlt-negro-back.webp';
 import hombreOnesBlanco from '../assets/products/hombre-ones-blanco.webp';
+import hombreOnesBlancoBack from '../assets/products/hombre-ones-blanco-back.webp';
 import hombreOnesNegro from '../assets/products/hombre-ones-negro.webp';
+import hombreOnesNegroBack from '../assets/products/hombre-ones-negro-back.webp';
 import hombreMotivation from '../assets/products/hombre-motivation.webp';
 import hombreMotivationBack from '../assets/products/hombre-motivation-back.webp';
 import hombreLegends from '../assets/products/hombre-legends.webp';
@@ -126,8 +128,8 @@ export const PRODUCTS = [
     type: 'single',
     sizes: TALLAS_CAMISETA,
     variants: [
-      { color: 'Blanco', hex: '#f5f5f4', img: hombreOnesBlanco },
-      { color: 'Negro', hex: '#18181b', img: hombreOnesNegro },
+      { color: 'Blanco', hex: '#f5f5f4', img: hombreOnesBlanco, back: hombreOnesBlancoBack },
+      { color: 'Negro', hex: '#18181b', img: hombreOnesNegro, back: hombreOnesNegroBack },
     ],
   },
   {
