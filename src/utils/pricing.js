@@ -1,6 +1,6 @@
 const PRICE_TABLE = {
   single: { EUR: 20, COP: 80000 },
-  set: { EUR: 40, COP: 150000 },
+  set: { EUR: 40, COP: 140000 },
 };
 
 export function getPrice(type, currency) {
