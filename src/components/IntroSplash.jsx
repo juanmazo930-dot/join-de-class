@@ -50,7 +50,7 @@ export default function IntroSplash() {
           filter: { duration: 0.5, ease: EASE },
           scale: { duration: (EXIT_DELAY + EXIT_DURATION) / 1000, ease: 'easeOut' },
         }}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain md:object-cover"
       />
 
       <div className="absolute inset-0 bg-black/20" />
