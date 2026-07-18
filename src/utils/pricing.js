@@ -1,5 +1,5 @@
 const PRICE_TABLE = {
-  single: { EUR: 20, COP: 20000 },
+  single: { EUR: 20, COP: 80000 },
   set: { EUR: 40, COP: 150000 },
 };
 
