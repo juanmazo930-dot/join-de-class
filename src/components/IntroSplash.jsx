@@ -4,8 +4,8 @@ import aireFresco from '../assets/hero/aire-fresco.webp';
 
 const TAGLINE_1 = 'No sigas tendencias.';
 const TAGLINE_2 = 'Crea tu propia clase.';
-const EXIT_DELAY = 900;
-const EXIT_DURATION = 600; // EXIT_DELAY + EXIT_DURATION = 1.5s total before the intro is gone
+const EXIT_DELAY = 2000; // how long the image holds before it starts fading
+const EXIT_DURATION = 1000; // slow fade-out once it starts
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function IntroSplash() {
