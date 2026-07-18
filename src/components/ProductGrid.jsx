@@ -87,7 +87,7 @@ function ProductCard({ product, onQuickView }) {
 
 export default function ProductGrid({ products, onQuickView }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 max-w-[80%] mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 md:max-w-[80%] md:mx-auto">
       <AnimatePresence mode="popLayout">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} onQuickView={onQuickView} />
