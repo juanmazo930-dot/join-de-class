@@ -55,24 +55,6 @@ export default function IntroSplash() {
 
       <div className="absolute inset-0 bg-black/20" />
 
-      {/* one-shot light sweep for a premium reveal */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ x: '-120%' }}
-          animate={{ x: '160%' }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '35%',
-            background: 'linear-gradient(75deg, transparent, rgba(255,255,255,0.22), transparent)',
-            mixBlendMode: 'screen',
-          }}
-        />
-      </div>
-
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 18 }}
